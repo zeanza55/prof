@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Store - 8 Products</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #a2c2e8;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+
+        .container {
+            display: grid;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-placeholder {
+            background-color: #f8f9fa;
+            height: 150px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .price {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .add-to-cart {
+            background-color: #3182ce;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background-color: #2b6cb0;
+        }
+    </style>
+</head>
+<body>
+    <h3>สิ่งที่โจทย์ต้องการ : </h3>
+    <p>1.มีหัวเรื่อง ใช้ h1</p>
+    <p>2.มีคำอธิบายล่างหับเรื่อง</p>
+    <p>3.สร้างกรอบหัวเรื่อง</p>
+    <p>4.สร้างรายการสินค้ามา 8 รายการ</p>
+    <p>5.มีรูปสินค้า</p>
+    <p>6.มีชื่อสินค้า</p>
+    <p>7.มีคำอธิบายสินค้า</p>
+    <p>8.มีราคาสินค้า</p>
+    <p>9.ทำให้รายการสินค้าแสดงให้เหมาะกับขนาดหน้าจอแต่ละขนาด</p>
+
+    <header>
+        <h1>Awesome Store</h1>
+        <p>ยินดีต้อนรับสู่ร้านค้าของเรา</p>
+    </header>
+
+    <main class="container">
+        <div class="product-card">
+            <div class="image-placeholder">👕</div>
+            <h3 class="product-title">Premium T-Shirt</h3>
+            <p class="product-desc">เนื้อผ้าคอตตอน 100% สวมใส่สบาย</p>
+            <div class="price">$29.99</div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="image-placeholder">☕</div>
+            <h3 class="product-title">Ceramic Mug</h3>
+            <p class="product-desc">แก้วเซรามิกทนความร้อน ดีไซน์มินิมอล</p>
+            <div class="price">$15.99</div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="image-placeholder">💻</div>
+            <h3 class="product-title">Ultra Laptop</h3>
+            <p class="product-desc">บางเบา ทรงพลัง สำหรับการทำงานยุคใหม่</p>
+            <div class="price">$999.00</div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="image-placeholder">🎧</div>
+            <h3 class="product-title">Headphones</h3>
+            <p class="product-desc">เสียงคมชัด ตัดเสียงรบกวนรอบข้าง</p>
+            <div class="price">$199.00</div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="image-placeholder">⌚</div>
+            <h3 class="product-title">Smart Watch</h3>
+            <p class="product-desc">ติดตามสุขภาพและแจ้งเตือนได้ทุกเวลา</p>
+            <div class="price">$250.00</div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="image-placeholder">📷</div>
+            <h3 class="product-title">Digital Camera</h3>
+            <p class="product-desc">บันทึกภาพความทรงจำด้วยความละเอียดสูง</p>
+            <div class="price">$550.00</div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="image-placeholder">🎒</div>
+            <h3 class="product-title">Travel Backpack</h3>
+            <p class="product-desc">ทนทาน จุของได้เยอะ เหมาะสำหรับนักเดินทาง</p>
+            <div class="price">$85.00</div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <div class="image-placeholder">💡</div>
+            <h3 class="product-title">Desk Lamp</h3>
+            <p class="product-desc">ไฟถนอมสายตา ปรับระดับความสว่างได้</p>
+            <div class="price">$45.00</div>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </main>
+
+    <footer style="text-align: center; margin-top: 50px; color: #888; font-size: 0.9rem;">
+        <p>&copy; 2026 Awesome Store. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanhanat Store</title>
+    <style>
+    /* 1. ตั้งค่าพื้นฐาน */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    /* 2. ส่วนหัว (Header & Nav) */
+    header {
+        background-color: #a2c2e8; /* สีฟ้าตามรูป */
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #1a1a1a;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    /* 3. เนื้อหาหลัก */
+    main {
+        max-width: 1100px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    main h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        border-bottom: 2px solid #ddd;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+
+    /* 4. จัดเลย์เอาต์การ์ดสินค้าด้วย Flexbox */
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+
+    .product-item {
+        background: white;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 1.5rem;
+        width: 300px; /* ขนาดความกว้างของการ์ด */
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        transition: transform 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .product-item img {
+        background-color: #eef2f7;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .product-item h3 {
+        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+    }
+
+    .product-item p {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 1rem;
+    }
+
+    /* 5. ปุ่มกด */
+    button {
+        background-color: #3182ce;
+        color: white;
+        border: none;
+        padding: 0.7rem 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        width: 100%;
+        margin-top: auto;
+    }
+
+    button:hover {
+        background-color: #2b6cb0;
+    }
+
+    /* 6. ส่วนท้าย */
+    footer {
+        text-align: center;
+        padding: 2rem;
+        color: #888;
+        font-size: 0.85rem;
+        border-top: 1px solid #eee;
+        margin-top: 3rem;
+    }
+</style>
+</head>
+<body>
+    <h3>สิ่งที่โจทย์ต้องการ : </h3>
+    <p>1.สร้างโครงสร้าง HTML สำหรับการ์ดสินค้าอย่างน้อย 3 ชิ้นภายใน</p>
+    <p>2.มีแถบเมนูอยู่ข้างบน</p>
+    <p>3.แต่ละการ์ดสินค้าต้องประกอบด้วย: รูปภาพสินค้า, ชื่อสินค้า, ราคา, คำอธิบายสั้นๆ และปุ่ม 'เพิ่มลงตะกร้า' </p>
+    <p>4.จัดโครงสร้างโค้ดให้อ่านง่ายและเป็นระเบียบ </p>
+    <header>
+        <h1>Sanhanat Store</h1>
+        <nav>
+                <ul>
+                    <li>
+                        <a href="#home">home</a>
+                    </li>
+                    <li>
+                        <a href="#products">products</a>
+                    </li>
+                    <li>
+                        <a href="#about">about</a>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+    <main>
+        <h2>My products</h2>
+
+        <section>
+        <article class="product-item">
+                <img src="https://via.placeholder.com/150" alt="รูปภาพสินค้าที่ 1">
+                <h3>สินค้ามหัศจรรย์ #1</h3>
+                <p>คำอธิบายสั้นๆ ของสินค้าชิ้นนี้ ซึ่งเต็มไปด้วยคุณสมบัติที่น่าทึ่งและจะเปลี่ยนชีวิตคุณให้ดีขึ้น!</p>
+                <p>ราคา: <strong>999 บาท</strong></p>
+                <button>เพิ่มลงรถเข็น</button>
+            </article>
+
+        <article class="product-item">
+                <img src="https://via.placeholder.com/150" alt="รูปภาพสินค้าที่ 2">
+                <h3>สินค้าสุดคุ้ม #2</h3>
+                <p>สินค้าชิ้นนี้ออกแบบมาเพื่อตอบโจทย์ความต้องการของคุณโดยเฉพาะ มาพร้อมกับคุณภาพที่เหนือราคา.</p>
+                <p>ราคา: <strong>1,490 บาท</strong></p>
+                <button>เพิ่มลงรถเข็น</button>
+            </article>
+
+        <article class="product-item">
+                <img src="https://via.placeholder.com/150" alt="รูปภาพสินค้าที่ 3">
+                <h3>สินค้าอินเทรนด์ #3</h3>
+                <p>ไม่ตกเทรนด์แน่นอน! สินค้าชิ้นนี้คือสิ่งที่ทุกคนต้องมีในปีนี้ ด้วยดีไซน์ทันสมัยและฟังก์ชันครบครัน.</p>
+                <p>ราคา: <strong>750 บาท</strong></p>
+                <button>เพิ่มลงรถเข็น</button>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 ร้านค้าของฉัน. สงวนลิขสิทธิ์ทั้งหมด.</p>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรไฟล์ของฉัน</title>
+</head>
+<style>
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f2f4f8;
+}
+.page-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;}
+
+.profile-container {
+    width: 360px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    padding: 24px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+header img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-top: 12px;
+    border: 3px solid #eee;
+}
+
+/* Main */
+main {
+    padding: 0 24px 24px;
+}
+
+h2 {
+    margin: 8px 0 4px;
+    font-size: 20px;
+}
+
+.job {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.desc {
+    font-size: 14px;
+    color: #555;
+    margin-top: 8px;
+}
+
+/* Social */
+h3 {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+ul a {
+    text-decoration: none;
+    color: #1a73e8;
+    font-weight: bold;
+}
+
+ul a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 14px;
+    font-size: 12px;
+    color: #777;
+    background: #fafafa;
+}
+</style>
+<body>
+<h3>สิ่งที่โจทย์ต้องการ : </h3>
+    <p>1.สร้างส่วนหัว (Header) ที่มีชื่อเว็บไซต์หรือโลโก้ และระบบนำทาง (Navigation) อย่างน้อย 3 ลิงก์</p>
+    <p>2.สร้างส่วนเนื้อหาหลัก (Main Content) </p>
+    <p>3.สร้างส่วนท้าย (Footer) ที่มีข้อมูลลิขสิทธิ์หรือลิงก์สำคัญอื่นๆ </p>
+<div class="profile-container">
+
+    <header>
+        <h1>Sanhanat</h1>
+        <img
+            src="https://via.placeholder.com/150"
+            alt="รูปโปรไฟล์"
+        >
+    </header>
+
+    <main>
+        <section>
+            <h2>Sanhanat Sangpet</h2>
+            <p class="job">Web Developer</p>
+            <p class="desc">ความหลงใหลในการสร้างสรรค์ประสบการณ์ดิจิทัลที่น่าประทับใจ</p>
+        </section>
+
+        <section>
+            <h3>Social Media</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Responsive Profile HTML</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

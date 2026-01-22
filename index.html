@@ -11,6 +11,21 @@
         .hero-blob {
             border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
         }
+        .nav-active {
+    color: #2563eb; /* สีฟ้า */
+    position: relative;
+}
+.nav-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background-color: #2563eb;
+    border-radius: 999px;
+}
+/*สีของตัวอักษร*/
 .logo-effect {
     font-weight: 800;
     letter-spacing: 0.5px;
@@ -45,6 +60,77 @@
     }
     100% {
         background-position: 0% 50%;
+    }
+}
+/*สีหลังรูป*/
+.light-wrap {
+    position: relative;
+}
+
+/* 🔥 แสงด้านหลัง (สีเข้มขึ้น) */
+.light-wrap::before {
+    content: "";
+    position: absolute;
+    inset: -50px;
+    background: radial-gradient(
+        circle at 35% 35%,
+        rgba(37,99,235,0.9),
+        rgba(59,130,246,0.75),
+        rgba(147,51,234,0.55),
+        transparent 72%
+    );
+    filter: blur(42px);
+    opacity: 1;
+    z-index: 0;
+    animation: smoothGlow 8s ease-in-out infinite;
+}
+
+/* 🌊 ขยับสมูท */
+@keyframes smoothGlow {
+    0% {
+        transform: translate(-16px, -12px);
+    }
+    50% {
+        transform: translate(18px, 14px);
+    }
+    100% {
+        transform: translate(-16px, -12px);
+    }
+}
+/*กระจาย*/
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* วงแสง */
+.page-ripple {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(
+        circle,
+        rgba(96,165,250,0.9),
+        rgba(59,130,246,0.6),
+        rgba(147,51,234,0.4),
+        transparent 70%
+    );
+    transform: translate(-50%, -50%);
+    animation: pageRipple 0.9s ease-out forwards;
+    filter: blur(8px);
+    z-index: 9999;
+}
+
+@keyframes pageRipple {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.4);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(8);
     }
 }
     </style>
@@ -99,10 +185,13 @@ class="fixed top-0 left-0 w-full h-screen bg-white z-[998]
             </div>
         </div>
         <div class="md:w-1/2 flex justify-center">
-            <div class="bg-blue-600 w-64 h-64 md:w-80 md:h-80 hero-blob flex items-end justify-center overflow-hidden">
-                <img src="https://scontent-bkk1-1.xx.fbcdn.net/v/t39.30808-6/418737877_1108975950537622_2305452863085840345_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEelzh9YS86mJW7d--WLdBXa3v7cD_gpv5re_twP-Cm_txl80cOwszlZW2M5AI-8j0I8NmJawwd43oI3u2xw5gm&_nc_ohc=IqGyJ4_7hMoQ7kNvwEsPwm7&_nc_oc=Adnqx7KUz-iVbV8XrvygZKGnOPE4MJAMyQxzmILnv3eIO-L3WetB6vNZ6uHVYAgHUwA&_nc_zt=23&_nc_ht=scontent-bkk1-1.xx&_nc_gid=sky9bZVftQL-a7S4WIleMg&oh=00_AfoxZbFzR9I66-T8wed6O9BbGwhre8NPpUfXFRImevyrgA&oe=6977BA8F">
-            </div>
+    <div class="light-wrap">
+        <div class="bg-blue-600 w-64 h-64 md:w-80 md:h-80 hero-blob flex items-end justify-center overflow-hidden relative z-10">
+            <img src="https://scontent-bkk1-1.xx.fbcdn.net/v/t39.30808-6/418737877_1108975950537622_2305452863085840345_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEelzh9YS86mJW7d--WLdBXa3v7cD_gpv5re_twP-Cm_txl80cOwszlZW2M5AI-8j0I8NmJawwd43oI3u2xw5gm&_nc_ohc=IqGyJ4_7hMoQ7kNvwEsPwm7&_nc_oc=Adnqx7KUz-iVbV8XrvygZKGnOPE4MJAMyQxzmILnv3eIO-L3WetB6vNZ6uHVYAgHUwA&_nc_zt=23&_nc_ht=scontent-bkk1-1.xx&_nc_gid=sky9bZVftQL-a7S4WIleMg&oh=00_AfoxZbFzR9I66-T8wed6O9BbGwhre8NPpUfXFRImevyrgA&oe=6977BA8F" />
         </div>
+    </div>
+</div>
+</div>
     </section>
 
     <section id="about" class="py-20 bg-white">
@@ -335,6 +424,19 @@ window.addEventListener("scroll", () => {
             link.classList.add("nav-active");
         }
     });
+});
+document.addEventListener("click", function (e) {
+    const ripple = document.createElement("span");
+
+    ripple.className = "page-ripple";
+    ripple.style.left = `${e.clientX}px`;
+    ripple.style.top = `${e.clientY}px`;
+
+    document.body.appendChild(ripple);
+
+    setTimeout(() => {
+        ripple.remove();
+    }, 900);
 });
 </script>
 

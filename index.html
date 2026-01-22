@@ -27,6 +27,28 @@
     border-radius: 999px;
     box-shadow: 0 4px 12px rgba(37,99,235,0.6);
         }
+        .logo-effect {
+    font-weight: 800;
+    background: linear-gradient(
+        90deg,
+        #1e3a8a,
+        #2563eb,
+        #38bdf8,
+        #1e3a8a
+    );
+    background-size: 300% 100%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: textFlow 5s linear infinite;
+}
+
+/* อนิเมชันสีไหลบนตัวอักษร */
+@keyframes textFlow {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
+}
     </style>
 </head>
 
@@ -53,7 +75,7 @@ class="fixed top-0 left-0 w-full h-screen bg-white z-[998]
 
     <header class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-xl font-bold">Sanhanat</div>
+            <div class="logo-effect text-xl font-bold">Sanhanat</div>
             <ul class="hidden md:flex space-x-8 font-medium">
                 <li><a href="#home" class="nav-link hover:text-blue-600 transition">Home</a></li>
                 <li><a href="#about" class="nav-link hover:text-blue-600 transition">About</a></li>
@@ -114,20 +136,20 @@ class="fixed top-0 left-0 w-full h-screen bg-white z-[998]
                     <div class="space-y-6">
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span class="font-bold flex items-center gap-2"><i class="fab fa-html5 text-blue-600"></i> HTML5</span>
-                                <span>95%</span>
+                                <span class="font-bold flex items-center gap-2"><i class="fab fa-html5 text-blue-600"></i> HTML</span>
+                                <span>60%</span>
                             </div>
                             <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
-                                <div class="bg-blue-600 h-full" style="width: 95%"></div>
+                                <div class="bg-blue-600 h-full" style="width: 60%"></div>
                             </div>
                         </div>
                         <div>
                             <div class="flex justify-between mb-1">
-                                <span class="font-bold flex items-center gap-2"><i class="fab fa-css3-alt text-blue-600"></i> CSS3</span>
-                                <span>85%</span>
+                                <span class="font-bold flex items-center gap-2"><i class="fab fa-css3-alt text-blue-600"></i> CSS</span>
+                                <span>50%</span>
                             </div>
                             <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
-                                <div class="bg-blue-600 h-full" style="width: 85%"></div>
+                                <div class="bg-blue-600 h-full" style="width: 50%"></div>
                             </div>
                         </div>
                         <div>

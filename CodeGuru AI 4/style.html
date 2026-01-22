@@ -20,5 +20,27 @@
         <p>ใช้มัดสิ่งของต่างๆ มีพลังพิเศษสุดโหดดด!!!</p>
         <button class="button">ดูรายละเอียดเพิ่มเติม</button>
     </div>
+    <div class="full-center">
+    <a href="https://github.com/zeanza55" class="btn ripple">doCode</a>
+</div>
 </body>
+<script>
+document.querySelectorAll(".ripple").forEach(button => {
+    button.addEventListener("click", function (e) {
+        const circle = document.createElement("span");
+        const diameter = Math.max(this.clientWidth, this.clientHeight);
+        const radius = diameter / 2;
+
+        circle.style.width = circle.style.height = `${diameter}px`;
+        circle.style.left = `${e.clientX - this.getBoundingClientRect().left - radius}px`;
+        circle.style.top = `${e.clientY - this.getBoundingClientRect().top - radius}px`;
+
+        this.appendChild(circle);
+
+        setTimeout(() => {
+            circle.remove();
+        }, 600);
+    });
+});
+</script>
 </html>
